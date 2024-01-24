@@ -23,6 +23,7 @@ import userEvent from '@testing-library/user-event';
 // Mock du store.
 jest.mock('../app/store', () => mockStore);
 
+// composant views/Bills : Le taux de couverture est à 100% néanmoins si tu regardes le premier test il manque la mention “expect”. Ajoute cette mention pour que le test vérifie bien ce que l’on attend de lui.
 // Test : Vérifie si je suis connecté en tant qu'employé et sur la page des factures (Bills Page), alors l'icône de facture dans la mise en page verticale devrait être mise en surbrillance.
 test('Given I am connected as an employee and on Bills Page, then bill icon in vertical layout should be highlighted', async () => {
 	// Intercepte localStorage.
@@ -116,6 +117,7 @@ test('When employee clicks on eye Button, modal should be displayed', () => {
 	expect(screen.getByTestId('modal-title')).toBeTruthy();
 });
 
+// composant views/NewBill
 // Test : Lorsqu'un employé clique sur 'nouvelle facture', le formulaire doit s'afficher.
 test('When employee clicks on new bill, form should be displayed', () => {
 	// Définit la navigation avec la fonction pathname.

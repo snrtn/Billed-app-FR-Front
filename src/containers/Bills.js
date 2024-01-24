@@ -26,9 +26,7 @@ export default class Bills {
 		const imgWidth = Math.floor($('#modaleFile').width() * 0.5);
 		$('#modaleFile')
 			.find('.modal-body')
-			.html(
-				`<div style='text-align: center;' class="bill-proof-container"><img width=${imgWidth} src=${billUrl} alt="Bill" /></div>`,
-			);
+			.html(`<div style='text-align: center;' class="bill-proof-container"><img src=${billUrl} alt="Bill" /></div>`);
 		$('#modaleFile').modal('show');
 	};
 
@@ -54,8 +52,8 @@ export default class Bills {
 								status: formatStatus(doc.status),
 							};
 						} catch (e) {
-							// if for some reason, corrupted data was introduced, we manage here failing formatDate function
-							// log the error and return unformatted date in that case
+							// Si pour une raison quelconque, des données corrompues ont été introduites, nous gérons ici l'échec de la fonction formatDate
+							// Enregistrez l'erreur et retournez la date non formatée dans ce cas-là
 							console.log(e, 'for', doc);
 							return {
 								...doc,
